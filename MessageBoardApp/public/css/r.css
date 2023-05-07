@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #cbc9c9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+input{
+    margin: 5px;
+}
+
+.buttons {
+    display: flex;
+    
+}
+
+a {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    background-color: rebeccapurple;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: purple;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}

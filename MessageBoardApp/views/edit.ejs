@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/e.css">
+    <title>Edit Message</title>
+</head>
+<body>
+    <header>
+      <h1>Edit Message</h1>  
+      <a href="/users/logout" style="color: #fff; text-decoration: none;">Logout</a>
+    </header>
+
+    <div class="container">
+
+        <form action="/messages/<%= message._id %>/edit" method="POST">
+            <input type="text" name="name" value="<%= message.name %>">
+            <input type="text" name="msg" value="<%= message.msg %>">
+            <button type="submit">Update</button>
+        </form>
+
+    </div>
+
+    <footer>
+        Made with &hearts; in Philly | &copy; <a href="http://fsdevkd.com">FsDevKD</a>
+    </footer>
+      
+
+</body>
+</html>

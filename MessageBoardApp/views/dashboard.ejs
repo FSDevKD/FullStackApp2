@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/d.css">
+    <title>Messageboard</title>
+</head>
+<body>
+
+<header>
+  <h1>MessageBoard</h1>
+  <a href="/users/logout" style="color: #fff; text-decoration: none;">Logout</a>
+</header>  
+
+<div class="container">
+<p>Welcome, Leave A Message For The Next Person <%= user.name %>!</p>
+
+<!-- Add this code block where you want the message board to appear -->
+<h3>Messages</h3>
+<ul class="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <li class="message"><div>
+      <span><%= messages[i].name %></span>
+      <span><%= messages[i].msg %></span>
+      <span><%= messages[i].thumbUp %></span>
+      <form action="/messages/<%= messages[i]._id %>/delete" method="POST">
+        <button type="submit" aria-hidden="true" >Delete</button>
+      </form>
+      <form action="/messages/<%= messages[i]._id %>/edit" method="GET">
+        <button type="submit" aria-hidden="true">Edit</button>
+      </form>
+    </div></li>
+  <% } %>
+</ul>
+
+<h2>Add a message</h2>
+<% if (user) { %>
+  <form action="/messages" method="POST">
+    <input type="text" value="<%= user.name %>: " name="name">
+    <input type="text" placeholder="Message" name="msg">
+    <button type="submit">Submit</button>
+  </form>
+<% } %>
+
+</div>
+
+
+<footer>
+  Made with &hearts; in Philly | &copy; <a href="http://fsdevkd.com">FsDevKD</a>
+</footer>
+
+</body>
+</html>
